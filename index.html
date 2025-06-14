@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brother Communication</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #000000;
+      --text-color: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: 0.3s ease;
+    }
+
+    header {
+      text-align: center;
+      padding: 1rem;
+      background-color: black;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, aqua, skyblue);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      color: grey;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 1rem;
+      background-color: #111;
+      flex-wrap: wrap;
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .nav-left a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: bold;
+    }
+
+    .toggle-btn {
+      cursor: pointer;
+      padding: 0.3rem 0.6rem;
+      background: #666;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    #datetime {
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    [data-theme="light"] #datetime {
+      color: #000;
+    }
+
+    [data-theme="dark"] #datetime {
+      color: #fff;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background-color: #ffffff !important;
+      color: #000;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      margin-top: 0.5rem;
+    }
+
+    .partners {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .partners img {
+      width: 100px;
+      margin: 0.5rem;
+      filter: grayscale(1);
+    }
+
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      .nav-left, .nav-right {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body data-theme="light">
+  <header>
+    <h1>Brother Communication</h1>
+    <p>Delivering trust through technology – Your go-to mobile shop.</p>
+  </header>
+
+  <nav>
+    <div class="nav-left">
+      <a href="#">Home</a>
+      <a href="#">Our Services</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <div class="nav-right">
+      <span id="datetime"></span>
+      <button class="toggle-btn" onclick="toggleTheme(this)">Dark Mode</button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="services">
+      <!-- Replace src with your actual images -->
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150?text=Mobile+Repair" alt="Mobile Repair">
+        <h3>Mobile Repair</h3>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150?text=Buy+Mobiles" alt="Buy Mobiles">
+        <h3>Buy Mobiles</h3>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150?text=Accessories" alt="Accessories">
+        <h3>Accessories</h3>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150?text=Mobile+Covers" alt="Mobile Covers">
+        <h3>Mobile Covers</h3>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150?text=Screen+Guards" alt="Screen Guards">
+        <h3>Screen Guards</h3>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150?text=SIM+Cards" alt="SIM Cards">
+        <h3>SIM Cards</h3>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150?text=Recharges" alt="Recharges">
+        <h3>Recharges</h3>
+      </div>
+    </section>
+
+    <section class="partners">
+      <h2>Our Partners</h2>
+      <img src="https://1000logos.net/wp-content/uploads/2021/10/Xiaomi-logo.png" alt="Mi">
+      <img src="https://1000logos.net/wp-content/uploads/2017/06/Samsung-Logo.png" alt="Samsung">
+      <img src="https://seeklogo.com/images/L/lava-logo-CA46EFAB8A-seeklogo.com.png" alt="Lava">
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Brother Communication | All rights reserved
+  </footer>
+
+  <script>
+    function toggleTheme(btn) {
+      const body = document.body;
+      const isDark = body.getAttribute('data-theme') === 'dark';
+      body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      btn.textContent = isDark ? 'Dark Mode' : 'Light Mode';
+    }
+
+    function updateDateTime() {
+      const now = new Date();
+      document.getElementById('datetime').textContent = now.toLocaleString();
+    }
+
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+  </script>
+</body>
+</html>
